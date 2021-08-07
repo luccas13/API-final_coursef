@@ -1,11 +1,12 @@
-// const testServices = require('../services/db/tests.services');
+const pointServices = require('../services/db/points.services');
 
-function getPoints (req, res) {
-    res.json({message: 'get Points'});
+async function getPoints (req, res) {
+    res.json(await pointServices.findPoints()); 
 }
 
-function getPointsById (req, res) {
-    res.json({message: 'get Point/id'});
+async function getPointsById (req, res) {
+    const id = req.params.id
+    res.json(await pointServices.findPointsById(id));
 }
 
 module.exports = { getPoints, getPointsById };
