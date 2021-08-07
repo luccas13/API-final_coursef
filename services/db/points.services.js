@@ -6,7 +6,7 @@ async function findPoints() {
 }
 
 async function findPointsById(id) {
-    const points = await (await Point.find()).filter(({_id}) => id == _id)[0];
+    const points = await Point.find({_id: id});
     return points;
 }
 
