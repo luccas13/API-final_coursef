@@ -1,0 +1,45 @@
+{
+    "points": [
+        {
+            "name": "Parque de la Familia",
+            "address": "Av. del Bicentenario",
+            "lat": -29.45351810907224,
+            "lon": -66.86776228707136,
+            "img": "https://i1.wp.com/rioja24.com.ar/wp-content/uploads/2021/07/Parque-de-la-familia.jpg"
+        },
+        {
+            "name": "Polideportivo de Vargas",
+            "address": "Jorge Newbery",
+            "lat": -29.395313586001965,
+            "lon": -66.84605628698465,
+            "img": "https://riojavirtual.com.ar/wp-content/uploads/2019/11/70925_1486084087-1200x545_c.jpg"
+        },
+        {
+            "name": "Rioja Juniors",
+            "address": "Chacho Peñaloza",
+            "lat": -29.42070018295717,
+            "lon": -66.84067594123059,
+            "img": "https://scontent.firj1-1.fna.fbcdn.net/v/t39.30808-6/232245637_4492337457513726_7003536129703391188_n.jpg?_nc_cat=110&ccb=1-4&_nc_sid=8bfeb9&_nc_ohc=qjz6PHQMoNAAX9xuGu9&tn=uotwytF0eQRaeNFp&_nc_ht=scontent.firj1-1.fna&oh=b09979aea912e54426c198aec17e1695&oe=6113C460"
+        },
+        {
+            "name": "Sindicato del Plástico",
+            "address": "Tala",
+            "lat": -29.453046174721962, 
+            "lon": -66.86397674360043,
+            "img": "https://lh3.googleusercontent.com/proxy/LeWguHM8pnvZSA12_Xfy2X9nRIkYiuNQ4Nlzbet2A7oI0P0naXMT6lV3bNgh2Qwi9cG08YcdYflFnQ_RXibGGyLCSwFKW0GW-kqA4Qgo_Yg"
+        },
+        {
+            "name": "SUM Polivalente",
+            "address": "Puerto Argentino",
+            "lat": -29.415087474682004, 
+            "lon": -66.84023627394475,
+            "img": "https://lh3.googleusercontent.com/proxy/377_Cbg_hiR1qlvL81gmDuMkieJLKNFH4Pd-eJToQiIIgNl9IguoalDpqGxaJYDt6F6jbHQUWhMpBMNR0o7SFHkaCuubLsd7e3cD0lmtdTJJuQ_OwlOLLg"
+        },
+        {
+            "name": "Super Domo",
+            "address": "Av. Dr. Cesar E. Romero",
+            "lat": -29.440608644455544,
+            "lon": -66.89345885282397,
+            "img": "https://www.nuevarioja.com.ar/img/noticias/32759_1612535456.jpg_g.jpg"
+        }
+]}
