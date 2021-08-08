@@ -5,9 +5,10 @@ const dbConfig = require("./config/db.config");
 const morgan = require('morgan');
 
 // Import routes
-const rootRouter = require('./routes/root.routes');
-const testsRouter = require('./routes/tests.routes');
+// const rootRouter = require('./routes/root.routes');
+// const testsRouter = require('./routes/tests.routes');
 const pointsRouter = require('./routes/points.routes');
+const appointmentRouter = require('./routes/appointment.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -32,9 +33,10 @@ mongoose
   });
 
 // Routes
-app.use('/', rootRouter);
-app.use('/', testsRouter);
+// app.use('/', rootRouter);
+// app.use('/', testsRouter);
 app.use('/', pointsRouter);
+app.use('/', appointmentRouter);
 
 app.listen(PORT, () => {
     console.log(`API connected successfully on port ${PORT}`);
