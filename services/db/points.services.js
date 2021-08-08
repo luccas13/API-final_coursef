@@ -6,7 +6,8 @@ async function findPoints() {
 }
 
 async function findPointsById(id) {
-    const points = await Point.find({_id: id});
+    const points = await Point.find({_id: id})
+                    .catch(err => ({message: 'Vaccination point not exist.'}))
     return points;
 }
 
