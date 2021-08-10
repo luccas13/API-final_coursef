@@ -1,4 +1,5 @@
 const appointmentServices = require('../services/db/appointment.services');
+const validationAppointment = require('../schema/appointment.schema');
 
 async function getAppointmentById (req, res) {
     const id = req.params.id
@@ -6,6 +7,12 @@ async function getAppointmentById (req, res) {
 }
 
 async function postAppointment (req, res) {
+    const data = req.body
+    try{
+        validationAppointment(data);
+    } catch(err){
+        return res.send({message: 'ERROR'});
+    };
     res.json(await appointmentServices.postAppointments(req.body));
 }
 

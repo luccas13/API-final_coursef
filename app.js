@@ -6,7 +6,7 @@ const morgan = require('morgan');
 
 // Import routes
 // const rootRouter = require('./routes/root.routes');
-// const testsRouter = require('./routes/tests.routes');
+const testsRouter = require('./routes/tests.routes');
 const pointsRouter = require('./routes/points.routes');
 const appointmentRouter = require('./routes/appointment.routes');
 
@@ -34,7 +34,7 @@ mongoose
 
 // Routes
 // app.use('/', rootRouter);
-// app.use('/', testsRouter);
+app.use('/', testsRouter);
 app.use('/', pointsRouter);
 app.use('/', appointmentRouter);
 
