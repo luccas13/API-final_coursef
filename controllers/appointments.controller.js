@@ -19,6 +19,11 @@ async function postAppointment (req, res) {
 async function patchAppointment (req, res) {
     const id = req.params.id
     const data = req.body
+    try{
+        validationAppointment(data);
+    } catch(err){
+        return res.send({message: 'ERROR'});
+    };
     res.json(await appointmentServices.patchAppointments(data, id));
 }
 
