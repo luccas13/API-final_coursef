@@ -7,7 +7,10 @@ const Appointment = mongoose.model(
     surname: String,
     dni: String,
     date: Date,
-    point: String,
+    point: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Point"
+    },
   })
 );
 

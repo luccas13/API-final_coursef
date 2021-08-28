@@ -1,25 +1,38 @@
+// const mongoose = require("mongoose");
 const Appointment = require('../../models/appointment.model');
 
 async function findAppointmentsById(id) {
-    const appointment = await Appointment.find({_id: id})
-                            .catch(err => ({message: 'appointment not exist.'}));
-    return appointment;
+    const appointment = await Appointment.aggregate([
+    {$match: { dni: id }},
+    {$lookup: {
+        from: 'points',
+        localField: 'point',
+        foreignField: '_id',
+        as: 'point',
+    }},
+    {$unwind: '$point'}
+    ]).catch(err => ({message: err}));    
+
+    if (appointment.length !== 0) return appointment[0]
+    else return {message: 'appointment not exist.'};
 }
 
 async function postAppointments(data) {
     const {name, surname, dni, date, point} = data;
-    const appointment = new Appointment({
-        name, surname, dni, date, point
-    });
-    await appointment.save((err) => {
-        if (err) return console.log(err);
-        console.log(`appointment ${appointment} added to the DB`);
-    });
-    return {status: 'ok'};
+    let appointments = await Appointment.find().catch(err => ({message: err}));
+    appointments = appointments.filter(item => item.dni === dni);
+    if (appointments.length === 0){
+        const appointment = new Appointment({
+            name, surname, dni, date, point
+        });
+        await appointment.save((err) => {
+            if (err) return {message: err};
+        });
+        return {status: 'ok', appointment};
+    } else return {message: 'There is already an appointment with this DNI.'}
 }
 
 async function patchAppointments(data, id) {
-    console.log(data);
     await Appointment.updateOne({_id: id}, data)
             .catch(err => ({message: 'Update Error.'}));
     return {message: 'Update success!'};
